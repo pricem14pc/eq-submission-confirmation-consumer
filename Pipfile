@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+name = "pypi"
+verify_ssl = true
+
+[packages]
+google-cloud-pubsub = "*"
+notifications-python-client = "*"
+structlog = "*"
+asyncio = "*"
+pylint = "*"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = false

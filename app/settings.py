@@ -1,0 +1,4 @@
+import os
+
+SUBSCRIPTION_ID = os.getenv("SUBSCRIPTION_ID")
+NOTIFY_API_KEY = os.getenv("NOTIFY_API_KEY")
