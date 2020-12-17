@@ -1,0 +1,73 @@
+.git
+.gitigore
+
+Dockerfile
+docker-compose.yml
+
+# Python temp files
+*.pyc
+__pycache__
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+coverage.xml
+.tox
+coverage/
+
+.cache
+
+*.log
+
+# Sphinx
+docs/_build
+
+.webassets-cache
+
+# Virtualenvs
+env
+env*
+venv
+
+# intellij
+.idea/
+*.ipr
+*.iml
+*.iws
+
+.DS_Store
+
+## OS X
+._*
+.Spotlight-V100
+.Trashes
+
+# Added to prevent committing coverage reports.
+htmlcov/
+
+*errorShots*
+
+# Exclude anything beneath test folder
+tests/
+
+.pylintrc

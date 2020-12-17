@@ -8,10 +8,19 @@ google-cloud-pubsub = "*"
 notifications-python-client = "*"
 structlog = "*"
 asyncio = "*"
-pylint = "*"
+orjson = "*"
+uvloop = "*"
 
 [requires]
 python_version = "3.8"
 
 [pipenv]
 allow_prereleases = false
+
+[dev-packages]
+isort = "*"
+pylint = "*"
+pytest = "*"
+flake8 = "*"
+pylint-quotes = "*"
+mypy = "*"
