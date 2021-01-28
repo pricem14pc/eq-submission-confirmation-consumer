@@ -30,7 +30,7 @@ jobs:
       steps:
         - uses: actions/checkout@v2
         - name: Tag
-          run: echo "::set-env name=TAG::${{ github.event.pull_request.head.ref }}"
+          run: echo "TAG=${{ github.event.pull_request.head.ref }}" > $GITHUB_ENV
         - name: Build
           run: docker build -t onsdigital/eq-submission-confirmation-consumer:$TAG .
         - name: Push
