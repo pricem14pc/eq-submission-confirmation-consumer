@@ -13,4 +13,4 @@ run:
     - -exc
     - |
       cd submission-confirmation-consumer-image-release/deploy-image
-      docker build -t eq-submission-confirmation-consumer-deploy-image:latest .
+      tar -xzf source.tar.gz -C ../extracted-submission-confirmation-consumer-image --strip-components=1
