@@ -1,0 +1,16 @@
+platform: linux
+image_resource:
+  type: docker-image
+  source:
+    repository: alpine
+inputs:
+  - name: eq-submission-confirmation-consumer
+outputs:
+  - name: extracted-submission-confirmation-consumer-image
+run:
+  path: sh
+  args:
+    - -exc
+    - |
+      cd submission-confirmation-consumer-image-release/deploy-image
+      docker build -t eq-submission-confirmation-consumer-deploy-image:latest .
