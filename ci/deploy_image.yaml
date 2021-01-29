@@ -12,5 +12,5 @@ run:
   args:
     - -exc
     - |
-      cd submission-confirmation-consumer-image-release/deploy-image
+      cd eq-submission-confirmation-consumer-image-release/deploy-image
       tar -xzf source.tar.gz -C ../extracted-submission-confirmation-consumer-image --strip-components=1
