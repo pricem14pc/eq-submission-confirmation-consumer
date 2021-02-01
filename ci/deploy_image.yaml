@@ -12,5 +12,5 @@ run:
   args:
     - -exc
     - |
-      cd eq-submission-confirmation-consumer/deploy-image
-      tar -xzf source.tar.gz -C ../extracted-submission-confirmation-consumer-image --strip-components=1
+      tar -czvf source.tar.gz /path/to/dir1 eq-submission-confirmation-consumer/deploy-image
+      cat Dockerfile > extracted-submission-confirmation-consumer-image
