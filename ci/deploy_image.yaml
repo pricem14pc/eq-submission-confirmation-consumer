@@ -13,4 +13,4 @@ run:
     - -exc
     - |
       tar -czvf source.tar.gz eq-submission-confirmation-consumer/deploy-image
-      tar -xzf source.tar.gz -C ../extracted-submission-confirmation-consumer-image --strip-components=1
+      tar -xzf source.tar.gz --strip-components=1
