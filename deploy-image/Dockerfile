@@ -6,6 +6,8 @@ RUN apt-get update && apt-get install -y build-essential libssl-dev zlib1g-dev l
 
 RUN  curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 
+RUN git clone git://github.com/yyuu/pyenv.git .pyenv
+
 ENV PYENV_ROOT $HOME/.pyenv
 
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
