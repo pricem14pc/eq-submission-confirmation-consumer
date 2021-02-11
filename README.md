@@ -26,7 +26,32 @@ For development purposes it is possible to deploy the function to GCP from a loc
 
 If this is the first time deploying a Cloud Function to a project, the Cloud Build and Cloud Functions APIs may need to be enabled - navigate to `https://console.developers.google.com/apis/library/cloudbuild.googleapis.com?project=your-project-name` and `https://console.developers.google.com/apis/library/cloudfunctions.googleapis.com?project=your-project-name` to enable them.
 
-Once authenticated, run `NOTIFY_API_KEY=<your-api-key> make deploy_function`.
+For the cloud function to work it needs a valid Notify API key, this can be provided in two ways - a `notify_api_key` secret in GCP Secret Manager or a `NOTIFY_API_KEY` environment variable. The environment variable should only be used for development or testing, it should never be used for a formal environment.
+
+**Secret Manager in GCP**
+
+Firstly check that Secret Manager in GCP is enabled, if not enable it. You can add the `notify_api_key` manually in the UI or use the gcloud commands below. If doing it manually, go to Secret Manager in GCP and click `Create Secret`, enter the name as `notify_api_key` and your secret value, a region can also be set if required.
+
+Once the secret has been created, click on the name `notify_api_key` and expand the info panel on the right if not already showing. In this menu click add member and fill out the form, member should be `<project_id>@appspot.gserviceaccount.com` and role should be `Secret Manager Secret Accessor`
+
+If using gcloud commands run the following
+
+```
+gcloud secrets create notify_api_key --data-file=<data_file> --project=<project_id> --replication-policy=<replication-policy> --locations=<locations>
+
+gcloud secrets add-iam-policy-binding `notify_api_key` --role roles/secretmanager.secretAccessor --member serviceAccount:<project_id>@appspot.gserviceaccount.com
+```
+
+N.B. replication-policy can be `automatic` or `user-managed`. If automatic neither `replication-policy` or `location` needs to be included in the command, if user-managed `replication-policy` and `location` must be provided
+
+**Deploying with an environment variable**
+
+You can also use an environment variable if you do not have access to Secret Manager, you can do this by updating the `deploy_function.sh` to include `--set-env-vars NOTIFY_API_KEY=<notify_api_key>`
+
+
+Once authenticated and the notify_api_key set, run `make deploy_function`.
+
+
 
 ## Deleting from local machine
 
