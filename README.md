@@ -52,7 +52,6 @@ You can also use an environment variable if you do not have access to Secret Man
 Once authenticated and the notify_api_key set, run `make deploy_function`.
 
 
-
 ## Deleting from local machine
 
 For development purposes it is possible to delete the function in GCP from a local machine using the `gcloud` command. First login using `gcloud auth login`, then set the application default credentials using `gcloud auth application-default login`. Be sure to make the current gcloud project id the one you wish to deploy to `gcloud config set project <your-project-id>`
