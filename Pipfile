@@ -20,6 +20,7 @@ responses = "*"
 pytest-cov = "*"
 functions-framework = "*"
 python-dotenv = "*"
+types-requests = "*"
 
 [requires]
 python_version = "3.8"
