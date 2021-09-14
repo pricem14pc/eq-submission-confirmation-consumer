@@ -13,6 +13,7 @@ from urllib3.util.retry import Retry
 def notify_function_process():
     cwd = dirname(dirname(__file__))
 
+    # pylint: disable=consider-using-with
     process = subprocess.Popen(
         ["pipenv run functions-framework --target=send_email --debug"],
         cwd=cwd,
